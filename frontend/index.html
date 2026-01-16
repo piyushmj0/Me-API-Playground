@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h1>Piyush Profile</h1>
+  <pre id="profile"></pre>
+
+  <input id="skill" placeholder="Search skill" />
+  <button onclick="search()">Search</button>
+
+  <ul id="results"></ul>
+
+<script>
+const API = "https://YOUR_BACKEND_URL";
+
+fetch(`${API}/profile`)
+  .then(res => res.json())
+  .then(data => profile.innerText = JSON.stringify(data, null, 2));
+
+function search() {
+  const skill = document.getElementById("skill").value;
+  fetch(`${API}/projects?skill=${skill}`)
+    .then(res => res.json())
+    .then(data =>
+      results.innerHTML = data.map(p => `<li>${p.title}</li>`).join("")
+    );
+}
+</script>
+</body>
+</html>
