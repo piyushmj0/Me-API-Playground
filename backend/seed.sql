@@ -1,5 +1,5 @@
 INSERT INTO profile (name, email, education)
-VALUES ('Piyush', 'piyush58@email.com', 'B.Tech Electronics and Communication');
+VALUES ('Piyush', 'piyush58@gmail.com', 'B.Tech Electronics and Communication');
 
 INSERT INTO skills (name)
 VALUES ('javascript'), ('nodejs'), ('postgresql');
