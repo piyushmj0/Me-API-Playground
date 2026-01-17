@@ -16,6 +16,9 @@ https://me-api-playground-74g2.onrender.com/health
 Profile API:
 https://me-api-playground-74g2.onrender.com/profile
 
+Frontend URL:
+https://backend-profile-demo.netlify.app/
+
 ---
 
 ## 🧩 Features
