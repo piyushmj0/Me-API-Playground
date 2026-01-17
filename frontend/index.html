@@ -1,30 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Me-API Playground</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+
+</head>
 <body>
-  <h1>Piyush Profile</h1>
-  <pre id="profile"></pre>
 
-  <input id="skill" placeholder="Search skill" />
-  <button onclick="search()">Search</button>
+  <div class="container">
+    <h1>👤 Piyush — Profile Playground</h1>
 
-  <ul id="results"></ul>
+    <p>This is a minimal frontend consuming my hosted backend API.</p>
 
-<script>
-const API = "https://me-api-playground-74g2.onrender.com";
+    <h2>Profile</h2>
+    <pre id="profile">Loading profile…</pre>
+    <div id="profileStatus" class="status"></div>
 
+    <h2>Search Projects by Skill</h2>
+    <div class="search-box">
+      <input id="skill" placeholder="e.g. javascript, node, sql" />
+      <button onclick="search()">Search</button>
+    </div>
 
-fetch(`${API}/profile`)
-  .then(res => res.json())
-  .then(data => profile.innerText = JSON.stringify(data, null, 2));
+    <ul id="results"></ul>
+    <div id="projectStatus"></div>
+  </div>
 
-function search() {
-  const skill = document.getElementById("skill").value;
-  fetch(`${API}/projects?skill=${skill}`)
-    .then(res => res.json())
-    .then(data =>
-      results.innerHTML = data.map(p => `<li>${p.title}</li>`).join("")
-    );
-}
-</script>
+  <footer>
+    Me-API Playground • Backend Assessment • Render + PostgreSQL
+  </footer>
+  <script src="script.js"></script>
+
 </body>
 </html>
